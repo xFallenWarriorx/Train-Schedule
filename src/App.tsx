@@ -36,6 +36,13 @@ function App() {
     }
     navigate(`/${dep}/${arr}`);
   };
+  const RedirectToHome = () => {
+    useEffect(() => {
+      navigate("/", { replace: true });
+    }, []);
+
+    return null;
+  };
   return (
     <div className="App">
       <Routes>
@@ -78,6 +85,7 @@ function App() {
             </div>
           }
         />
+        <Route path="*" element={<RedirectToHome />} />
       </Routes>
     </div>
   );
