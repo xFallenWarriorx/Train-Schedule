@@ -36,6 +36,7 @@
   background-repeat: no-repeat;
   filter: blur(5px);
   transform: scale(1);
+  z-index:0;
 }
 .App-header > * {
   position: relative;
