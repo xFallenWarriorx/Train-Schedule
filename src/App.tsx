@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles/App.css";
 import "./styles/InputStation.css";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  Link,
+} from "react-router-dom";
 import { InputStation } from "./components/InputStation";
 import TrainsList from "./components/TrainsList";
 import CalendarComp from "./components/CalendarComp";
@@ -32,31 +38,47 @@ function App() {
   };
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="station-card" style={{ display: "flex", gap: "12px" }}>
-          <InputStation
-            label="Станция отправления"
-            value={dep}
-            invalid={errors.dep}
-            errorText="Только буквы"
-            onChange={setDep}
-          />
-          <span style={{ fontSize: "24px", color: "black" }}>⇆</span>
-          <InputStation
-            label="Станция назначения"
-            value={arr}
-            invalid={errors.arr}
-            errorText="Только буквы"
-            onChange={setArr}
-          />
-        </div>
-        <CalendarComp />
-        <button onClick={handleSubmit}>Поиск</button>
-        <Routes>
-          <Route path="/" element={null} />
-          <Route path="/:dep/:arr" element={<TrainsList />} />
-        </Routes>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <header className="App-header">
+              <div
+                className="station-card"
+                style={{ display: "flex", gap: "12px" }}
+              >
+                <InputStation
+                  label="Станция отправления"
+                  value={dep}
+                  invalid={errors.dep}
+                  errorText="Только буквы"
+                  onChange={setDep}
+                />
+                <span style={{ fontSize: "24px", color: "black" }}>⇆</span>
+                <InputStation
+                  label="Станция назначения"
+                  value={arr}
+                  invalid={errors.arr}
+                  errorText="Только буквы"
+                  onChange={setArr}
+                />
+              </div>
+              <CalendarComp />
+              <button onClick={handleSubmit}>Поиск</button>
+            </header>
+          }
+        />
+
+        <Route
+          path="/:dep/:arr"
+          element={
+            <div className="results-page">
+              <Link to="/">Вернуться к поиску</Link>
+              <TrainsList />
+            </div>
+          }
+        />
+      </Routes>
     </div>
   );
 }
