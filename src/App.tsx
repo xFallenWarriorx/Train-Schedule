@@ -21,10 +21,13 @@ function App() {
   const navigate = useNavigate();
   // Фильтрация символов при поиске
   const handleSubmit = () => {
-    const regexp = /^[A-Za-zА-Яа-я\s]+$/;
+    const regexp = /^[A-Za-zА-Яа-яЁё\s]+$/;
     const depResult = regexp.test(dep);
     const arrResult = regexp.test(arr);
     setErrors({ dep: !depResult, arr: !arrResult });
+    if (!depResult || !arrResult) {
+      return;
+    }
     navigate(`/${dep}/${arr}`);
   };
   return (

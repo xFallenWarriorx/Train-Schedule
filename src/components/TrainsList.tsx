@@ -8,8 +8,8 @@ const TrainsList = () => {
   const params = useParams();
 
   showTable =
-    params.dep?.toLowerCase() === "москва" &&
-    params.arr?.toLowerCase() === "самара";
+    params.dep?.toLowerCase().trim() === "москва" &&
+    params.arr?.toLowerCase().trim() === "самара";
 
   const trains = useAppSelector((state) => state.trains.list);
   return (
