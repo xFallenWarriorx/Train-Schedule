@@ -1,15 +1,16 @@
 // Хранилище Redux
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import dateReducer from "./Date.store";
 
 const trainsSlice = createSlice ({
     name: "trains",
     initialState: {
         list: [
-      { id: 1, name: "010 «Жигули»", route: "Москва - Самара", time: "4:20", price: "4 200 Р" },
-      { id: 2, name: "032 «Оренбуржье»", route: "Москва - Самара", time: "4:25", price: "4 300 Р" },
-      { id: 3, name: "016 «Двухэтажный состав»", route: "Москва - Самара", time: "6:30", price: "3 200 Р" },
-      { id: 4, name: "014 «Южный Урал»", route: "Москва - Самара", time: "18:20", price: "5 600 Р" },
+      { id: 1, name: "010 «Жигули»", route: "Москва - Самара", time: "4:20", price: "4 200 Р", date:"2026-06-24" },
+      { id: 2, name: "032 «Оренбуржье»", route: "Москва - Самара", time: "4:25", price: "4 300 Р", date: "2026-06-24" },
+      { id: 3, name: "016 «Двухэтажный состав»", route: "Москва - Самара", time: "6:30", price: "3 200 Р", date:"2026-06-25" },
+      { id: 4, name: "014 «Южный Урал»", route: "Москва - Самара", time: "18:20", price: "5 600 Р", date: "2026-06-25" },
         ]
     },
     reducers: {
@@ -32,6 +33,7 @@ export const {addTrain, removeTrain, updateTrain} = trainsSlice.actions;
 export const store = configureStore({
   reducer: {
     trains: trainsSlice.reducer,
+    date: dateReducer,
   },
 });
 
