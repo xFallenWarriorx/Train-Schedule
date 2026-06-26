@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # gh-pages repo
 
-https://xfallenwarriorx.github.io/Train-Schedule
+https://xfallenwarriorx.github.io/Train-Schedule/
 
 ## Available Scripts
 
