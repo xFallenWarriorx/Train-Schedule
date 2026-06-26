@@ -27,14 +27,14 @@ function App() {
   const navigate = useNavigate();
   // Фильтрация символов при поиске
   const handleSubmit = () => {
-    const regexp = /^[A-Za-zА-Яа-яЁё\s]+$/;
+    const regexp = /^[A-Za-zА-Яа-яЁё]+(?:[\s-][A-Za-zА-Яа-яЁё]+)*$/;
     const depResult = regexp.test(dep);
     const arrResult = regexp.test(arr);
     setErrors({ dep: !depResult, arr: !arrResult });
     if (!depResult || !arrResult) {
       return;
     }
-    navigate(`/${dep}/${arr}`);
+    navigate(`/${dep.trim()}/${arr.trim()}`);
   };
   const RedirectToHome = () => {
     useEffect(() => {
@@ -58,7 +58,7 @@ function App() {
                   label="Станция отправления"
                   value={dep}
                   invalid={errors.dep}
-                  errorText="Только буквы"
+                  errorText="Разрешены только буквы"
                   onChange={setDep}
                 />
                 <span style={{ fontSize: "24px", color: "black" }}>⇆</span>
@@ -66,7 +66,7 @@ function App() {
                   label="Станция назначения"
                   value={arr}
                   invalid={errors.arr}
-                  errorText="Только буквы"
+                  errorText="Разрешены только буквы"
                   onChange={setArr}
                 />
               </div>
@@ -75,7 +75,6 @@ function App() {
             </header>
           }
         />
-
         <Route
           path="/:dep/:arr"
           element={
