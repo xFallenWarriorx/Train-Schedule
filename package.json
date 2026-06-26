@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xFallenWarriorx.github.io/Train-Schedule",
+  "homepage": "https://xFallenWarriorx.github.io/Train-Schedule/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
     "@testing-library/dom": "^10.4.1",
