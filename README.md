@@ -2,10 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# gh-pages repo
-
-https://xfallenwarriorx.github.io/Train-Schedule/
-
 ## Available Scripts
 
 In the project directory, you can run:
