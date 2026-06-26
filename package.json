@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://xFallenWarriorx.github.io/Train-Schedule",
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
     "@testing-library/dom": "^10.4.1",
@@ -19,8 +20,7 @@
     "react-router-dom": "^7.18.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://xFallenWarriorx.github.io/Train-Schedule"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
